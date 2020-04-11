@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Steven",
+    "name": "Quiz Steven Universo",
     "slug": "Steven",
     "platforms": [
       "ios",
@@ -13,7 +13,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FF5E6D"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,6 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android":{
+      "package":"com.marcodesruahma.StevenQuizUniverso",
+      "versionCode":1
     }
   }
 }

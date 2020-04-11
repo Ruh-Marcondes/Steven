@@ -7,11 +7,13 @@ import {
   TouchableOpacity,
   Modal,
   Text,
+  Alert,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
+
 
 //Tela Play
 export default function HomeScreen({ navigation }) {
@@ -21,32 +23,35 @@ export default function HomeScreen({ navigation }) {
   const [open, setOpen] = useState(false);
   //função
   function goToPerguntas() {
-    alert("Ainda ñ Liberado");
+    Alert.alert("Descupa ","Ainda ñ Liberado");
     //return navigation.navigate("Perguntas")
   }
   function closeModal() {
     setOpen(false);
+  }
+  function gotoSttings(){
+    setOpen(false)
+    return navigation.navigate("Configurações")
   }
   return (
     <View style={styles.container}>
       <Modal animationType="slide" transparent={true} visible={open}>
         <View style={styles.containerModal}>
           <LinearGradient
-            colors={["#fefefe", "#ca3877"]}
+            colors={["#fefefe", "#e66da3"]}
             style={{
               position: "absolute",
               flex: 1,
               height: "100%",
               width: "100%",
-            }}
-          >
+            }}>
             <View style={styles.MargimModal}>
               <View style={styles.Elementos}>
                 <TouchableOpacity onPress={closeModal}>
                   <AnimatableIcons
                     name="arrow-left"
                     size={37}
-                    color="#1ebaea"
+                    color="#000245"
                     animation="bounceInRight"
                     duration={700}
                     style={{ marginLeft: 10, paddingTop: 5 }}
@@ -55,7 +60,7 @@ export default function HomeScreen({ navigation }) {
               </View>
               <View
                 style={{
-                  borderBottomColor: "#fff",
+                  borderBottomColor: "#797977",
                   borderBottomWidth: 1,
                   marginLeft: 2,
                   marginRight: 3,
@@ -64,15 +69,14 @@ export default function HomeScreen({ navigation }) {
                 }}
               />
               {/*Confucuração*/}
-              <TouchableOpacity onPress={() => alert("Em andamento")}>
+              <TouchableOpacity onPress={gotoSttings}>
                 <View style={styles.Elementos}>
-                  <Feather name="settings" size={30} color="#fdffb6" />
+                  <Feather name="settings" size={30} color="#dfe221" />
                   <Text
                     style={{
                       marginRight: 50,
                       fontSize: 20,
                       fontWeight: "bold",
-                      fontFamily: "",
                     }}
                   >
                     Configurações
@@ -81,7 +85,7 @@ export default function HomeScreen({ navigation }) {
               </TouchableOpacity>
               <View
                 style={{
-                  borderBottomColor: "#fff",
+                  borderBottomColor: "#797977",
                   borderBottomWidth: 1,
                   marginLeft: 2,
                   marginRight: 3,
@@ -92,13 +96,12 @@ export default function HomeScreen({ navigation }) {
               {/*Sobre*/}
               <TouchableOpacity onPress={() => alert("Em andamento")}>
                 <View style={styles.Elementos}>
-                  <Feather name="info" size={30} color="#fdffb6" />
+                  <Feather name="info" size={30} color="#dfe221" />
                   <Text
                     style={{
                       marginRight: 100,
                       fontSize: 20,
                       fontWeight: "bold",
-                      fontFamily: "",
                     }}
                   >
                     Sobre
@@ -107,7 +110,7 @@ export default function HomeScreen({ navigation }) {
               </TouchableOpacity>
               <View
                 style={{
-                  borderBottomColor: "#fff",
+                  borderBottomColor: "#797977",
                   borderBottomWidth: 1,
                   marginLeft: 2,
                   marginRight: 3,
@@ -128,7 +131,7 @@ export default function HomeScreen({ navigation }) {
               size={37}
               color="#8D20D0"
               animation="bounceInRight"
-              duration={2500}
+              duration={1000}
               style={{ marginLeft: 15 }}
             />
           </TouchableOpacity>
@@ -146,7 +149,7 @@ export default function HomeScreen({ navigation }) {
               source={require("../assets/Button_play.png")}
               useNativeDriver
               animation="bounceInDown"
-              duration={2000}
+              duration={1500}
               direction="alternate"
             />
           </TouchableOpacity>
@@ -156,6 +159,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 var styles = StyleSheet.create({
+// Configurações Modal
   Elementos: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -174,6 +178,8 @@ var styles = StyleSheet.create({
     height: "100%",
     justifyContent: "space-between",
   },
+  //termina as configurações do Modal
+  //Configurações do resto da pagina
   container: {
     flex: 1,
     flexDirection: "column",
