@@ -16,12 +16,14 @@ import { LinearGradient } from "expo-linear-gradient";
 export default function SettingsScreen({ navigation }) {
   const [open, setOpen] = useState(false);
   //funções
-  function closeModal() {
-    setOpen(false);
-    return navigation.navigate("Home");
-  }
-  function gotohome() {}
-
+  function gotohome() {
+  setOpen(false);
+  return navigation.navigate("Home");
+}
+function goToAbout(){
+  setOpen(false)
+  return navigation.navigate("Sobre")
+}
   return (
     <View style={styles.container}>
       <Modal animationType="slide" transparent={true} visible={open}>
@@ -37,7 +39,7 @@ export default function SettingsScreen({ navigation }) {
           >
             <View style={styles.MargimModal}>
               <View style={styles.Elementos}>
-                <TouchableOpacity onPress={closeModal}>
+                <TouchableOpacity onPress={gotohome}>
                   <Ionicons
                     name="ios-arrow-back"
                     size={37}
@@ -86,7 +88,7 @@ export default function SettingsScreen({ navigation }) {
                 }}
               />
               {/*Sobre*/}
-              <TouchableOpacity onPress={() => alert("Em andamento")}>
+              <TouchableOpacity onPress={goToAbout}>
                 <View style={styles.Elementos}>
                   <Feather name="info" size={30} color="#dfe221" />
                   <Text
