@@ -1,44 +1,27 @@
 import React, { useState } from "react";
 import {
-  ImageBackground,
   View,
+  Text,
   Image,
+  ImageBackground,
   StyleSheet,
   TouchableOpacity,
-  Modal,
-  Text,
   Alert,
+  Modal,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import * as Animatable from "react-native-animatable";
 import Constants from "expo-constants";
+import { Ionicons, Feather } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
-
-//Tela Play
-export default function HomeScreen({ navigation }) {
-  //animacão
-  const AnimatableBtn = Animatable.createAnimatableComponent(Image);
-  const AnimatableIcons = Animatable.createAnimatableComponent(Feather);
+export default function SettingsScreen({ navigation }) {
   const [open, setOpen] = useState(false);
-  //função
-  function goToPerguntas() {
-    Alert.alert("Descupa ","Ainda ñ Liberado");
-    //return navigation.navigate("Perguntas")
-  }
+  //funções
   function closeModal() {
     setOpen(false);
+    return navigation.navigate("Home");
   }
-  function gotoSttings(){
-    Alert.alert("Desculpa","Ainda ñ está pronto")
-    //setOpen(false)
-    //return navigation.navigate("Configurações")
-  }
-  function goToAbout(){
-   // Alert.alert("Desculpa","Ainda ñ está pronto")
-    setOpen(false)
-   return navigation.navigate("Sobre")
-  }
+  function gotohome() {}
+
   return (
     <View style={styles.container}>
       <Modal animationType="slide" transparent={true} visible={open}>
@@ -50,17 +33,16 @@ export default function HomeScreen({ navigation }) {
               flex: 1,
               height: "100%",
               width: "100%",
-            }}>
+            }}
+          >
             <View style={styles.MargimModal}>
               <View style={styles.Elementos}>
                 <TouchableOpacity onPress={closeModal}>
-                  <AnimatableIcons
-                    name="arrow-left"
+                  <Ionicons
+                    name="ios-arrow-back"
                     size={37}
                     color="#000245"
-                    animation="bounceInRight"
-                    duration={700}
-                    style={{ marginLeft: 10, paddingTop: 5 }}
+                    style={{ marginLeft: 20, paddingTop: 5 }}
                   />
                 </TouchableOpacity>
               </View>
@@ -75,7 +57,11 @@ export default function HomeScreen({ navigation }) {
                 }}
               />
               {/*Confucuração*/}
-              <TouchableOpacity onPress={gotoSttings}>
+              <TouchableOpacity
+                onPress={() => {
+                  setOpen(false);
+                }}
+              >
                 <View style={styles.Elementos}>
                   <Feather name="settings" size={30} color="#dfe221" />
                   <Text
@@ -100,7 +86,7 @@ export default function HomeScreen({ navigation }) {
                 }}
               />
               {/*Sobre*/}
-              <TouchableOpacity onPress={goToAbout}>
+              <TouchableOpacity onPress={() => alert("Em andamento")}>
                 <View style={styles.Elementos}>
                   <Feather name="info" size={30} color="#dfe221" />
                   <Text
@@ -130,42 +116,34 @@ export default function HomeScreen({ navigation }) {
       </Modal>
       {/*Termina o modal e começa o principal*/}
       <View style={styles.header}>
-        <View>
-          <TouchableOpacity onPress={() => setOpen(true)}>
-            <AnimatableIcons
-              name="align-justify"
-              size={37}
-              color="#8D20D0"
-              animation="bounceInRight"
-              duration={1000}
-              style={{ marginLeft: 15 }}
-            />
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity onPress={() => setOpen(true)}>
+          <Ionicons
+            name="ios-arrow-back"
+            size={37}
+            style={{ marginLeft: 15 }}
+          />
+        </TouchableOpacity>
       </View>
       <ImageBackground
         source={require("../assets/Fundo_init.png")}
         style={styles.image}
       >
-        {/*conteudo da pag */}
-        <View style={styles.contButton}>
-          <TouchableOpacity onPress={goToPerguntas}>
-            <AnimatableBtn
-              style={styles.button}
-              source={require("../assets/Button_play.png")}
-              useNativeDriver
-              animation="bounceInDown"
-              duration={1500}
-              direction="alternate"
-            />
-          </TouchableOpacity>
+        <View style={styles.container}>
+          <View style={styles.containerPage}>
+            <Text>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</Text>
+            <Text>AAAAAAAAAAAAAAAAAA</Text>
+          </View>
+          <View style={styles.containerPage}>
+            <Text>OLAÀAAAAAAAAA````AÀA`</Text>
+          </View>
         </View>
       </ImageBackground>
     </View>
   );
 }
-var styles = StyleSheet.create({
-// Configurações Modal
+
+const styles = StyleSheet.create({
+  // Configurações Modal
   Elementos: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -190,26 +168,18 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
   },
+  header: {
+    paddingTop: Constants.statusBarHeight + 3,
+    flexDirection: "row",
+    backgroundColor: "#FFBBC8",
+  },
   image: {
     flex: 1,
     resizeMode: "cover",
     justifyContent: "center",
   },
-
-  contButton: {
+  containerPage: {
+    flex: 1,
     flexDirection: "column",
-    marginLeft: 20,
-    marginRight: 20,
-  },
-  button: {
-    alignSelf: "center",
-    width: "70%",
-    resizeMode: "contain",
-    height: 220,
-  },
-  header: {
-    paddingTop: Constants.statusBarHeight + 3,
-    flexDirection: "row",
-    backgroundColor: "#FFBBC8",
   },
 });
