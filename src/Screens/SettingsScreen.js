@@ -65,7 +65,7 @@ function goToAbout(){
                 }}
               >
                 <View style={styles.Elementos}>
-                  <Feather name="settings" size={30} color="#dfe221" />
+                  <Feather name="settings" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 50,
@@ -90,7 +90,7 @@ function goToAbout(){
               {/*Sobre*/}
               <TouchableOpacity onPress={goToAbout}>
                 <View style={styles.Elementos}>
-                  <Feather name="info" size={30} color="#dfe221" />
+                  <Feather name="info" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 100,

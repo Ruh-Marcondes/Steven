@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, version } from "react";
 import {
   ImageBackground,
   View,
@@ -13,8 +13,7 @@ import { Feather } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
-
-
+import { newvalues, entrei } from "../Armazenamento/armazen";
 //Tela Play
 export default function HomeScreen({ navigation }) {
   //animacão
@@ -22,22 +21,23 @@ export default function HomeScreen({ navigation }) {
   const AnimatableIcons = Animatable.createAnimatableComponent(Feather);
   const [open, setOpen] = useState(false);
   //função
-  function goToPerguntas() {
-    Alert.alert("Descupa ","Ainda ñ Liberado");
-    //return navigation.navigate("Perguntas")
+  async function goToPerguntas() {
+    newvalues();
+    do {
+      if (entrei == 1) {
+        return navigation.navigate("Perguntas");
+      }
+    } while (entrei !== 1);
   }
   function closeModal() {
     setOpen(false);
   }
-  function gotoSttings(){
-    Alert.alert("Desculpa","Ainda ñ está pronto")
-    //setOpen(false)
-    //return navigation.navigate("Configurações")
+  function gotoSttings() {
+    Alert.alert("Desculpa", "Ainda ñ está pronto");
   }
-  function goToAbout(){
-   // Alert.alert("Desculpa","Ainda ñ está pronto")
-    setOpen(false)
-   return navigation.navigate("Sobre")
+  function goToAbout() {
+    setOpen(false);
+    return navigation.navigate("Sobre");
   }
   return (
     <View style={styles.container}>
@@ -50,7 +50,8 @@ export default function HomeScreen({ navigation }) {
               flex: 1,
               height: "100%",
               width: "100%",
-            }}>
+            }}
+          >
             <View style={styles.MargimModal}>
               <View style={styles.Elementos}>
                 <TouchableOpacity onPress={closeModal}>
@@ -77,7 +78,7 @@ export default function HomeScreen({ navigation }) {
               {/*Confucuração*/}
               <TouchableOpacity onPress={gotoSttings}>
                 <View style={styles.Elementos}>
-                  <Feather name="settings" size={30} color="#dfe221" />
+                  <Feather name="settings" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 50,
@@ -102,7 +103,7 @@ export default function HomeScreen({ navigation }) {
               {/*Sobre*/}
               <TouchableOpacity onPress={goToAbout}>
                 <View style={styles.Elementos}>
-                  <Feather name="info" size={30} color="#dfe221" />
+                  <Feather name="info" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 100,
@@ -165,7 +166,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 var styles = StyleSheet.create({
-// Configurações Modal
+  // Configurações Modal
   Elementos: {
     flexDirection: "row",
     justifyContent: "space-between",

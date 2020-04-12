@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import {
   ImageBackground,
   View,
-  Image,
   StyleSheet,
-  TouchableHighlight,
   TouchableOpacity,
   Modal,
   Text,
@@ -12,7 +10,6 @@ import {
   ToastAndroid,
 } from "react-native";
 import { Feather, Ionicons, FontAwesome } from "@expo/vector-icons";
-import * as Animatable from "react-native-animatable";
 import Constants from "expo-constants";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -68,7 +65,7 @@ export default function AboutScreen({navigation}) {
                 onPress={goToConfig}
               >
                 <View style={styles.Elementos}>
-                  <Feather name="settings" size={30} color="#dfe221" />
+                  <Feather name="settings" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 50,
@@ -93,7 +90,7 @@ export default function AboutScreen({navigation}) {
               {/*Sobre*/}
               <TouchableOpacity onPress={() => setOpen(false)}>
                 <View style={styles.Elementos}>
-                  <Feather name="info" size={30} color="#dfe221" />
+                  <Feather name="info" size={30} color="#fcff29" />
                   <Text
                     style={{
                       marginRight: 100,
@@ -143,8 +140,8 @@ export default function AboutScreen({navigation}) {
             style={{
               fontSize: 45,
               alignSelf: "center",
-              marginTop: 10,
-              fontWeight: "bold",
+              marginTop: 15,
+              fontWeight: "900",
               textDecorationLine: "underline",
               color: "#baefe9",
             }}
@@ -173,8 +170,7 @@ export default function AboutScreen({navigation}) {
               <Text style={styles.texticon}> Ruahma Marcondes</Text>
             </View>
           </View>
-          <TouchableHighlight
-            underlayColor="null"
+          <TouchableOpacity
             onPress={() => {
               ToastAndroid.show("Cornos deviam ser mortos", ToastAndroid.SHORT);
             }}>
@@ -182,7 +178,7 @@ export default function AboutScreen({navigation}) {
               <FontAwesome name="diamond" size={30} color="#c23d76" />
               <Text style={styles.texticon}>Version: 1.0.1</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>
