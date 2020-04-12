@@ -54,7 +54,7 @@ export function newvalues() {
     }
   }
   entrei = 1;
-  alert("Vamos começar");
+ // alert("Vamos começar");
 //   console.log(
 //     per.length,
 //     alternativa1.length,
