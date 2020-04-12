@@ -8,7 +8,7 @@ import {
   Text,
   Alert,
 } from "react-native";
-import { style, diamantes } from "./stylesModal";
+import { style, diamantes,} from "./stylesModal";
 import { FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import RadioForm from "react-native-simple-radio-button";
@@ -24,6 +24,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 export default function QuestionsScreen({ navigation }) {
   //variaveis
+  const [acertos,setAcerto] = useState(0)
   const [open, setOpen] = useState(true);
   const [pergunta, setPergunta] = useState(per[0]);
   const [alt1, setAlt1] = useState(alternativa1[0]);
@@ -80,9 +81,7 @@ export default function QuestionsScreen({ navigation }) {
   }
   function addResposta() {
     if (resposta[vez] == radio_props[selecionado].label) {
-      console.log("A resposta ta certa: ");
-      console.log(vez);
-      console.log(dificuldade[vez]);
+          setAcerto(acertos+1)
       if (dificuldade[vez] === "F") {
         setPontos(pontos + 10);
       } else {
@@ -149,7 +148,18 @@ export default function QuestionsScreen({ navigation }) {
                   </View>
                 </View>
                 {/*Header - da tela*/}
-                
+                <View style = {styles.container}>
+                  <View style = {style.MargimModal}>
+                      <View style={{marginTop:"25%",marginLeft:"35%",flexDirection:"column"}}>
+                        <Text style = {styles.txtFinal}>
+                          Parabéns
+                        </Text>
+                        <Text style = {styles.txtFinal}>
+                          você acertou: {acertos}/10
+                        </Text>
+                      </View>
+                  </View>
+                </View>
               </View>
             </LinearGradient>
           </View>
@@ -247,5 +257,10 @@ var styles = StyleSheet.create({
     alignItems: "center",
     flex: 1,
     marginLeft: 190,
+  },
+  txtFinal:{
+    fontSize:20,
+    fontWeight:"bold",
+    color:"#1C1C1C"
   },
 });
