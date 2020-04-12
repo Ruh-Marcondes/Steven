@@ -10,8 +10,7 @@ import {
 import { FontAwesome5 } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import RadioForm from "react-native-simple-radio-button";
-import {per,alternativa1,alternativa2,alternativa3,alternativa4} from '../Armazenamento/armazen'
-import { set } from "react-native-reanimated";
+import {per,alternativa1,alternativa2,alternativa3,alternativa4,resposta} from '../Armazenamento/armazen'
 export default function QuestionsScreen({ navigation }) {
   //variaveis
   const [pergunta, setPergunta] = useState(per[0]);
@@ -19,7 +18,10 @@ export default function QuestionsScreen({ navigation }) {
   const [alt2, setAlt2] = useState(alternativa2[0]);
   const [alt3, setAlt3] = useState(alternativa3[0]);
   const [alt4, setAlt4] = useState(alternativa4[0]);
+  const [selecionado,setselecionado] = useState()
   const [vez, setVez] = useState(0);
+  //variaveis para resposta do user
+  const [respostaUser,setRespostaUser] = useState([])
   var radio_props = [
     { label: alt1, value: 0 },
     { label: alt2, value: 1 },
@@ -30,12 +32,21 @@ export default function QuestionsScreen({ navigation }) {
   function goToNext(){
     if(vez < 9){
       setVez(vez+1) 
-    }else{
+      setPergunta(per[vez+1])
+      setAlt1(alternativa1[vez+1])
+      setAlt2(alternativa2[vez+1])
+      setAlt3(alternativa3[vez+1])
+      setAlt4(alternativa4[vez+1])
+      }else{
       setVez(0)
+      setAlt1(alternativa1[0])
+      setAlt2(alternativa2[0])
+      setAlt3(alternativa3[0])
+      setAlt4(alternativa4[0])
     }
   }
   return (
-    <View style={styles.container} onRequestClose={() => alert("teste")}>
+    <View style={styles.container}>
       <ImageBackground
         source={require("../assets/Fundo_perguntas.png")}
         style={styles.image}
@@ -66,8 +77,8 @@ export default function QuestionsScreen({ navigation }) {
                 <RadioForm
                   radio_props={radio_props}
                   initial={null}
-                  onPress={(value,label) => {
-                    alert("is this value: " + label);
+                  onPress={(value) => {[setselecionado(value),
+                    alert("is this value: " + selecionado)];
                   }}
                   borderWidth={5}
                   buttonSize={20}
@@ -111,6 +122,8 @@ var styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     flex: 1,
+    flexWrap:'nowrap',
+    justifyContent:'space-between'
   },
   hader: {
     marginTop: Constants.statusBarHeight + 30,
@@ -119,15 +132,15 @@ var styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
     flexDirection: "row",
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 20,
+    marginRight: 30,
     padding: 15,
     justifyContent: "space-between",
   },
   TXTperguntas: {
     color: "#080808",
     fontWeight: "600",
-    fontSize: 30,
+    fontSize: 25,
     justifyContent: "center",
   },
   contBtns: {
