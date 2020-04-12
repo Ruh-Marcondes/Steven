@@ -24,9 +24,10 @@
     "ios": {
       "supportsTablet": true
     },
-    "android":{
-      "package":"com.marcodesruahma.StevenQuizUniverso",
-      "versionCode":1
-    }
+    "android": {
+      "package": "com.marcodesruahma.StevenQuizUniverso",
+      "versionCode": 1
+    },
+    "description": "Quiz sobre Steven Universo -> da Rebecca Sugar  -> @RuahmaMarcondes. "
   }
 }
