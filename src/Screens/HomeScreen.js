@@ -9,6 +9,7 @@ import {
   Text,
   Alert,
 } from "react-native";
+import {style,colorLiner,colorsModal} from './stylesModal'
 import { Feather } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 import Constants from "expo-constants";
@@ -18,7 +19,6 @@ import { newvalues, entrei } from "../Armazenamento/armazen";
 export default function HomeScreen({ navigation }) {
   //animacão
   const AnimatableBtn = Animatable.createAnimatableComponent(Image);
-  const AnimatableIcons = Animatable.createAnimatableComponent(Feather);
   const [open, setOpen] = useState(false);
   //função
   async function goToPerguntas() {
@@ -40,90 +40,52 @@ export default function HomeScreen({ navigation }) {
     return navigation.navigate("Sobre");
   }
   return (
-    <View style={styles.container}>
+    <View style={style.container}>
       <Modal animationType="slide" transparent={true} visible={open}>
-        <View style={styles.containerModal}>
+        <View style={style.containerModal}>
           <LinearGradient
-            colors={["#fefefe", "#e66da3"]}
-            style={{
-              position: "absolute",
-              flex: 1,
-              height: "100%",
-              width: "100%",
-            }}
-          >
-            <View style={styles.MargimModal}>
-              <View style={styles.Elementos}>
+            colors={[colorLiner[0],colorLiner[1]]}
+            style={style.linear}>
+            <View style={style.MargimModal}>
+              <View style={style.Elementos}>
                 <TouchableOpacity onPress={closeModal}>
-                  <AnimatableIcons
+                  <Feather
                     name="arrow-left"
                     size={37}
-                    color="#000245"
-                    animation="bounceInRight"
-                    duration={700}
+                    color={colorsModal[0]}
                     style={{ marginLeft: 10, paddingTop: 5 }}
                   />
                 </TouchableOpacity>
               </View>
               <View
-                style={{
-                  borderBottomColor: "#797977",
-                  borderBottomWidth: 1,
-                  marginLeft: 2,
-                  marginRight: 3,
-                  paddingTop: 5,
-                  marginBottom: 10,
-                }}
+                style={style.linhas}
               />
-              {/*Confucuração*/}
+              {/*Conficuração*/}
               <TouchableOpacity onPress={gotoSttings}>
-                <View style={styles.Elementos}>
-                  <Feather name="settings" size={30} color="#fcff29" />
+                <View style={style.Elementos}>
+                  <View style = {style.iconMargin}>
+                  <Feather name="settings" size={30} color={colorsModal[1]} />
+                  </View>
                   <Text
-                    style={{
-                      marginRight: 50,
-                      fontSize: 20,
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Configurações
-                  </Text>
+                    style={[style.text,{marginRight:50}]}
+                  > Configurações</Text>
                 </View>
               </TouchableOpacity>
               <View
-                style={{
-                  borderBottomColor: "#797977",
-                  borderBottomWidth: 1,
-                  marginLeft: 2,
-                  marginRight: 3,
-                  paddingTop: 5,
-                  marginBottom: 10,
-                }}
+                style= { style.linhas}
               />
               {/*Sobre*/}
               <TouchableOpacity onPress={goToAbout}>
-                <View style={styles.Elementos}>
-                  <Feather name="info" size={30} color="#fcff29" />
+                <View style={style.Elementos}>
+                  <View style = {style.iconMargin}>
+                  <Feather name="info" size={30} color={colorsModal[1]} />
+                  </View>
                   <Text
-                    style={{
-                      marginRight: 100,
-                      fontSize: 20,
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Sobre
-                  </Text>
+                    style={style.text}> Sobre</Text>
                 </View>
               </TouchableOpacity>
               <View
-                style={{
-                  borderBottomColor: "#797977",
-                  borderBottomWidth: 1,
-                  marginLeft: 2,
-                  marginRight: 3,
-                  paddingTop: 5,
-                  marginBottom: 10,
-                }}
+                style={style.linhas}
               />
             </View>
           </LinearGradient>
@@ -133,12 +95,10 @@ export default function HomeScreen({ navigation }) {
       <View style={styles.header}>
         <View>
           <TouchableOpacity onPress={() => setOpen(true)}>
-            <AnimatableIcons
+            <Feather
               name="align-justify"
               size={37}
               color="#8D20D0"
-              animation="bounceInRight"
-              duration={1000}
               style={{ marginLeft: 15 }}
             />
           </TouchableOpacity>
@@ -146,7 +106,7 @@ export default function HomeScreen({ navigation }) {
       </View>
       <ImageBackground
         source={require("../assets/Fundo_init.png")}
-        style={styles.image}
+        style={style.image}
       >
         {/*conteudo da pag */}
         <View style={styles.contButton}>
@@ -166,37 +126,6 @@ export default function HomeScreen({ navigation }) {
   );
 }
 var styles = StyleSheet.create({
-  // Configurações Modal
-  Elementos: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 5,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  MargimModal: {
-    flexDirection: "column",
-    marginLeft: 10,
-    marginRight: 10,
-  },
-  containerModal: {
-    flexDirection: "column",
-    width: "70%",
-    height: "100%",
-    justifyContent: "space-between",
-  },
-  //termina as configurações do Modal
-  //Configurações do resto da pagina
-  container: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  image: {
-    flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-  },
-
   contButton: {
     flexDirection: "column",
     marginLeft: 20,
