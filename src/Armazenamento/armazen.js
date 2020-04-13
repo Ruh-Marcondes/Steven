@@ -55,15 +55,15 @@ export function newvalues() {
   }
   entrei = 1;
  // alert("Vamos começar");
-  console.log(
-    per,
-    alternativa1,
-    alternativa2,
-    alternativa3,
-    alternativa4,
-    resposta,
-    dificuldade
-  );
+  // console.log(
+  //   per,
+  //   alternativa1,
+  //   alternativa2,
+  //   alternativa3,
+  //   alternativa4,
+  //   resposta,
+  //   dificuldade
+  // );
 }
 export function limpar() {
   per.splice(0, per.length)
