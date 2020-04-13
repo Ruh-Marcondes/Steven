@@ -7,7 +7,7 @@
       "android",
       "web"
     ],
-    "version": "1.0.5",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -28,6 +28,6 @@
       "package": "com.marcodesruahma.StevenQuizUniverso",
       "versionCode": 1
     },
-    "description": "Quiz sobre Steven Universo -> da Rebecca Sugar  -> @RuahmaMarcondes. "
+    "description": "Quiz sobre Steven Universo -> da Rebecca Sugar  -> @RuahmaMarcondes."
   }
 }

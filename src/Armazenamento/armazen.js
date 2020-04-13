@@ -55,13 +55,21 @@ export function newvalues() {
   }
   entrei = 1;
  // alert("Vamos começar");
-//   console.log(
-//     per.length,
-//     alternativa1.length,
-//     alternativa2.length,
-//     alternativa3.length,
-//     alternativa4.length,
-//     resposta.length,
-//     dificuldade.length
-//   );
+  console.log(
+    per,
+    alternativa1,
+    alternativa2,
+    alternativa3,
+    alternativa4,
+    resposta,
+    dificuldade
+  );
+}
+export function limpar() {
+  per.splice(0, per.length)
+  alternativa1.splice(0, alternativa1.length)
+  alternativa2.splice(0, alternativa2.length)
+  alternativa3.splice(0, alternativa3.length)
+  alternativa4.splice(0, alternativa4.length)
+  resposta.splice(0, resposta.length)
 }

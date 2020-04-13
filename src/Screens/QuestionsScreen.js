@@ -8,8 +8,8 @@ import {
   Text,
   Alert,
 } from "react-native";
-import { style, diamantes,} from "./stylesModal";
-import { FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
+import { style, diamantes } from "./stylesModal";
+import { FontAwesome5, SimpleLineIcons, AntDesign } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import RadioForm from "react-native-simple-radio-button";
 import {
@@ -20,11 +20,14 @@ import {
   alternativa4,
   resposta,
   dificuldade,
+  newvalues,
+  entrei,
+  limpar,
 } from "../Armazenamento/armazen";
 import { LinearGradient } from "expo-linear-gradient";
 export default function QuestionsScreen({ navigation }) {
   //variaveis
-  const [acertos,setAcerto] = useState(0)
+  const [acertos, setAcerto] = useState(0);
   const [open, setOpen] = useState(true);
   const [pergunta, setPergunta] = useState(per[0]);
   const [alt1, setAlt1] = useState(alternativa1[0]);
@@ -69,11 +72,6 @@ export default function QuestionsScreen({ navigation }) {
       setAlt4(alternativa4[vez + 1]);
       addResposta();
     } else {
-      setVez(0);
-      setAlt1(alternativa1[0]);
-      setAlt2(alternativa2[0]);
-      setAlt3(alternativa3[0]);
-      setAlt4(alternativa4[0]);
       setOpen(false);
       setModalFinal(true);
       console.log("Pontos: " + pontos);
@@ -81,7 +79,7 @@ export default function QuestionsScreen({ navigation }) {
   }
   function addResposta() {
     if (resposta[vez] == radio_props[selecionado].label) {
-          setAcerto(acertos+1)
+      setAcerto(acertos + 1);
       if (dificuldade[vez] === "F") {
         setPontos(pontos + 10);
       } else {
@@ -92,6 +90,18 @@ export default function QuestionsScreen({ navigation }) {
         }
       }
     }
+  }
+  function agaiin(){
+    limpar()
+    newvalues()  
+      do {
+        if (entrei == 1) {
+        setModalFinal(false)
+        setVez(0);
+        setAcerto(0)
+        setOpen(true)
+        }
+      } while (entrei !== 1);
   }
   return (
     <View style={style.container}>
@@ -148,16 +158,40 @@ export default function QuestionsScreen({ navigation }) {
                   </View>
                 </View>
                 {/*Header - da tela*/}
-                <View style = {styles.container}>
-                  <View style = {style.MargimModal}>
-                      <View style={{marginTop:"25%",marginLeft:"35%",flexDirection:"column"}}>
-                        <Text style = {styles.txtFinal}>
-                          Parabéns
-                        </Text>
-                        <Text style = {styles.txtFinal}>
-                          você acertou: {acertos}/10
-                        </Text>
-                      </View>
+                <View style={style.container}>
+                  <View
+                    style={{
+                      marginTop: "25%",
+                      marginLeft: "5%",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={styles.txtFinal}>Parabéns</Text>
+                    <Text style={[styles.txtFinal, { alignSelf: "center" }]}>
+                      você acertou: {acertos}/10
+                    </Text>
+                  </View>
+                  <View style={style.container}>
+                    <TouchableOpacity onPress={fechar}>
+                      <AntDesign
+                        name="home"
+                        color={"#797977"}
+                        size={50}
+                        style={{
+                          alignSelf: "center",
+                          marginTop: 50,
+                          marginBottom: 75,
+                        }}
+                      />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={agaiin}>
+                      <SimpleLineIcons
+                        name="reload"
+                        size={100}
+                        style={{ alignSelf: "center", marginTop: 10 }}
+                      />
+                    </TouchableOpacity>
                   </View>
                 </View>
               </View>
@@ -258,9 +292,9 @@ var styles = StyleSheet.create({
     flex: 1,
     marginLeft: 190,
   },
-  txtFinal:{
-    fontSize:20,
-    fontWeight:"bold",
-    color:"#1C1C1C"
+  txtFinal: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#000245",
   },
 });
