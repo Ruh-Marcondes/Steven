@@ -12,11 +12,12 @@ var a,
   b = [];
 export function newvalues() {
   entrei = 0;
-  console.log(b.length)
+  //console.log(b.length)
   //sorteio das perguntas
   b.splice(0,10)
-  console.log(b.length)
+  //console.log(b.length)
   var c = (armazen.length) - 1
+ // console.log(c)
   for (var i = 0; b.length < 10; i++) {
     a = Math.round(Math.random() *c );
     const found = b.find((element) => element == a);
