@@ -1,4 +1,4 @@
-import React, { useState, version } from "react";
+import React, { useState,} from "react";
 import {
   ImageBackground,
   View,
@@ -28,6 +28,7 @@ export default function HomeScreen({ navigation }) {
         return navigation.navigate("Perguntas");
       }
     } while (entrei !== 1);
+    entrei = 0
   }
   function closeModal() {
     setOpen(false);

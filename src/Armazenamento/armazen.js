@@ -11,16 +11,14 @@ export var entrei;
 var a,
   b = [];
 export function newvalues() {
-  per.splice(0, per.length);
-  alternativa1.splice(0, alternativa1.length);
-  alternativa2.splice(0, alternativa2.length);
-  alternativa3.splice(0, alternativa3.length);
-  alternativa4.splice(0, alternativa4.length);
-  resposta.splice(0, resposta.length);
   entrei = 0;
+  console.log(b.length)
   //sorteio das perguntas
+  b.splice(0,10)
+  console.log(b.length)
+  var c = (armazen.length) - 1
   for (var i = 0; b.length < 10; i++) {
-    a = Math.round(Math.random() * (armazen.length - 1));
+    a = Math.round(Math.random() *c );
     const found = b.find((element) => element == a);
     if (found === undefined) {
       b.push(a);
@@ -62,13 +60,5 @@ export function newvalues() {
   }
   entrei = 1;
   // alert("Vamos começar");
-  // console.log(
-  //   per,
-  //   alternativa1,
-  //   alternativa2,
-  //   alternativa3,
-  //   alternativa4,
-  //   resposta,
-  //   dificuldade
-  // );
+  console.log(per);
 }

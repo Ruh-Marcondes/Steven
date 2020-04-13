@@ -1,6 +1,6 @@
 export const armazen = [
     {
-      pergunta: "Qual o nome do criador(a) de Steven Universo ?",
+      pergunta: "Qual o nome do criador(a) de Steven Universo?",
       resposta: "Rebecca Sugar",
       alternativa1: "Michaela Dietz",
       alternativa2: "Sarah Stiles",
@@ -8,7 +8,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Qual a primeira fusão a aparecer ?",
+      pergunta: "Qual a primeira fusão a aparecer?",
       resposta: "Garnet",
       alternativa1: "Opal",
       alternativa2: "Stevonnie",
@@ -16,7 +16,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Por quais gems a Garnet é formada ?",
+      pergunta: "Por quais gems a Garnet é formada?",
       resposta: "Rubi e Safira",
       alternativa1: "Rubi e Nefrita",
       alternativa2: "Safira e Nefrita",
@@ -24,7 +24,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Por quantas gems Fluorita é formada ?",
+      pergunta: "Por quantas gems Fluorita é formada?",
       resposta: "7",
       alternativa1: "5",
       alternativa2: "6",
@@ -40,7 +40,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Qual o nome do dono(a) do parque de diversões de Beach City ?",
+      pergunta: "Qual o nome do dono(a) do parque de diversões de Beach City?",
       resposta: "Harold Smiley",
       alternativa1: "Buddy Buddwick",
       alternativa2: "Connie Maheswaran",
@@ -48,7 +48,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Qual o emprego de Barbara Miller ?",
+      pergunta: "Qual o emprego de Barbara Miller?",
       resposta: "Carteira",
       alternativa1: "Cantora",
       alternativa2: "Prefeita",
@@ -56,7 +56,7 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: "Com quem Steven se fundiu primeiro ?",
+      pergunta: "Com quem Steven se fundiu primeiro?",
       resposta: "Connie",
       alternativa1: "Pérola",
       alternativa2: "Ametista",
@@ -64,19 +64,59 @@ export const armazen = [
       dificuldade: "F",
     },
     {
-      pergunta: 'Quem "estilhaçou" Pink Diamond ?',
+      pergunta: 'Quem "estilhaçou" Pink Diamond?',
       resposta: "Pérola",
       alternativa1: "Rose Quarts",
       alternativa2: "Jasper",
       alternativa3: "Diamente Branco",
-      dificuldade: "F",
+      dificuldade: "M",
     },
     {
-      pergunta: "Quantas Diamantes existem ?",
+      pergunta: "Quantas Diamantes existem?",
       resposta: "4",
       alternativa1: "2",
       alternativa2: "1",
       alternativa3: "3",
       dificuldade: "F",
     },
-  ];
+    {
+      pergunta: "Qual foi a primeira coisa que o Steven comeu na série?",
+      resposta: "As sobras",
+      alternativa1: "Rosquinha do Big Risquinha",
+      alternativa2: "Pizza do Peixe cozido",
+      alternativa3: "Biscoito Gatinho",
+      dificuldade: "M",
+    },
+    {
+      pergunta: "O que ou quem foi que as gems enfrentaram primeiro na série?",
+      resposta: "Um olho vermelho",
+      alternativa1: "Um olho gigante",
+      alternativa2: "Uma gem corrompida",
+      alternativa3: "Uma gems que queria destruir eles",
+      dificuldade: "M",
+    },
+    {
+      pergunta: "Qual a primeira musica que toca na séria não sendo a abertura?",
+      resposta: "Minha van vai pro seu coração",
+      alternativa1: "Nos somos as cristal Gems",
+      alternativa2: "Destino",
+      alternativa3: "Mulher Gigante",
+      dificuldade: "M",
+    },
+    {
+      pergunta: "Qual episodio a Peridote aparece pela primeira vez?",
+      resposta: "Trasportadores",
+      alternativa1: "Visitante do espaço",
+      alternativa2: "Amigos de Bolha",
+      alternativa3: "Perdidos no espaço",
+      dificuldade: "M",
+    },
+    {
+      pergunta: "O que são fragmento?",
+      resposta: "Pedaços de gems que não tem consciência",
+      alternativa1: "Pedaços de gems que tem consciência",
+      alternativa2: "Gems corrompidas",
+      alternativa3: "Um tipo de rosquinha",
+      dificuldade: "M",
+    },
+  ]; 
