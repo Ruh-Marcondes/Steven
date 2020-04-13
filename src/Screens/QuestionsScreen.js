@@ -74,7 +74,7 @@ export default function QuestionsScreen({ navigation }) {
     } else {
       setOpen(false);
       setModalFinal(true);
-      console.log("Pontos: " + pontos);
+      //console.log("Pontos: " + pontos);
     }
   }
   function addResposta() {

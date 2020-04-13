@@ -1,4 +1,4 @@
-import {armazen} from './Aperuntas'
+import { armazen } from "./Aperuntas";
 
 export var per = [],
   alternativa1 = [],
@@ -8,12 +8,19 @@ export var per = [],
   resposta = [],
   dificuldade = [];
 export var entrei;
-var a,b = [];
+var a,
+  b = [];
 export function newvalues() {
-    entrei = 0;
+  per.splice(0, per.length);
+  alternativa1.splice(0, alternativa1.length);
+  alternativa2.splice(0, alternativa2.length);
+  alternativa3.splice(0, alternativa3.length);
+  alternativa4.splice(0, alternativa4.length);
+  resposta.splice(0, resposta.length);
+  entrei = 0;
   //sorteio das perguntas
   for (var i = 0; b.length < 10; i++) {
-    a = Math.round(Math.random() *((armazen.length)-1));
+    a = Math.round(Math.random() * (armazen.length - 1));
     const found = b.find((element) => element == a);
     if (found === undefined) {
       b.push(a);
@@ -54,7 +61,7 @@ export function newvalues() {
     }
   }
   entrei = 1;
- // alert("Vamos começar");
+  // alert("Vamos começar");
   // console.log(
   //   per,
   //   alternativa1,
@@ -64,12 +71,4 @@ export function newvalues() {
   //   resposta,
   //   dificuldade
   // );
-}
-export function limpar() {
-  per.splice(0, per.length)
-  alternativa1.splice(0, alternativa1.length)
-  alternativa2.splice(0, alternativa2.length)
-  alternativa3.splice(0, alternativa3.length)
-  alternativa4.splice(0, alternativa4.length)
-  resposta.splice(0, resposta.length)
 }
