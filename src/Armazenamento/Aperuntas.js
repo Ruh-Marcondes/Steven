@@ -30,7 +30,7 @@ armazen = [
       alternativa1: "5",
       alternativa2: "6",
       alternativa3: "3",
-      dificuldade: "F",
+      dificuldade: "M",
     },
     {
       pergunta: "Qual humano era perdidamente apaixonado por Garnet?",
@@ -53,8 +53,8 @@ armazen = [
       resposta: "Carteira",
       alternativa1: "Cantora",
       alternativa2: "Prefeita",
-      alternativa3: "Garçonet",
-      dificuldade: "F",
+      alternativa3: "Garçonete",
+      dificuldade: "M",
     },
     {
       pergunta: "Com quem Steven se fundiu primeiro?",
@@ -73,7 +73,7 @@ armazen = [
       dificuldade: "M",
     },
     {
-      pergunta: "Quantas Diamantes existem?",
+      pergunta: "Quantas Diamont existem?",
       resposta: "4",
       alternativa1: "2",
       alternativa2: "1",
@@ -97,7 +97,7 @@ armazen = [
       dificuldade: "M",
     },
     {
-      pergunta: "Qual a primeira musica que toca na séria não sendo a abertura?",
+      pergunta: "Qual a primeira música que toca na séria não sendo a abertura?",
       resposta: "Minha van vai pro seu coração",
       alternativa1: "Nos somos as cristal Gems",
       alternativa2: "Destino",
@@ -232,6 +232,96 @@ armazen = [
       alternativa3: "Ametista e Steven",
       dificuldade: "F",
     },
-    
+    {
+      pergunta: "Steven, as Gems, e seu pai, aparentemente amam cantar, e em alguns episódios,"+
+      " para animar, eles cantam para a gente. Mas não é em todo episódio que tem música. Em qual dos episódios abaixo não teve música?",
+      resposta: "Dedos de Gato",
+      alternativa1: "O canhão de laser",
+      alternativa2: "Treinador  Steven",
+      alternativa3: "Aventura na Ilha",
+      dificuldade: "M",
+    },
+    {
+      pergunta:"Quais são as profissões do pai e da mãe de Connie respectivamente?",
+      resposta:"Segurançaparticular e Médico",
+      alternativa1:"Professora e Padeiro",
+      alternativa2:"Policial e Veterinária",
+      alternativa3:"Programador e Escritora",
+      dificuldade:"F"
+    },
+    {
+      pergunta:"Qual \"presente\" Greg dá ao Steven no fim dos eventos de \"O hóspede\"",
+      resposta:"Uma fita adesiva",
+      alternativa1:"Seu violão",
+      alternativa2:"Um CD de quando ele tentou ficar famoso como RockStar",
+      alternativa3:"Uma bicicleta novinha",
+      dificuldade:"F"
+    },
+    {
+      pergunta:"De qual corte Lapis lazuli era?",
+      resposta:"Blue Diamond",
+      alternativa1:"White Diamond",
+      alternativa2:"Pink Diamond",
+      alternativa3:"Yellow Diamond",
+      dificuldade:"D"
+    },
+    {
+      pergunta: "Qual o nome completo de Steven",
+      resposta:"Steven Quartz Universe",
+      alternativa1:"Steven Crytal Gem Quazts Universe",
+      alternativa2:"Steven Universe",
+      alternativa3:"Steven Crystal Gem Universe",
+      dificuldade:"F"
+    },
+    {
+      pergunta:"Quais são as respectivas armas de Pearl, Garnet, Amethyst, Steven e Lapis?",
+      alternativa2:"Lança, Martelo, Mangual, Escudo e Chicote",
+      alternativa1:"Lança, Arco e Flecha, Capacete, Mangual e Espada",
+      alternativa3:"Manoplas, Hidrocinese, Realçadores de Membros, Lança e Capacete",
+      dificuldade:"F",
+      resposta:"Lança, Manoplas, Chicote, Escudo e Hidrocinese"
+    },
+    {
+      pergunta:"Onde Steven enconta o Leão?",
+      resposta:"Deserto",
+      alternativa3:"Oceano",
+      alternativa2:"Floresta",
+      alternativa1:"Zona de batalha agora infestada de morangos silvestres",
+      dificuldade:"F"
+    },
+    {
+      dificuldade:"D",
+      pergunta:"O que Leão escondia em sua juba no episódio \"Lion 3\"?",
+      resposta:"Uma blusa, uma fita e um bismuto embolhado",
+      alternativa1:"Uma Gem, um báu, uma bicicleta",
+      alternativa2:"Uma espada, um espelho, uma fita",
+      alternativa3:"Um capacete, um urso de pelúcia, uma blusa"
+    },
+    {
+      pergunta:"O que aconteceu na época do descobrimento de Beach City?",
+      resposta:"Os colonizadores encontraram uma gem corropida que foi derrotada por uma fusão desconhecida das Crystal gems",
+      alternativa1:"Os colonizadores encontraram muitos nativos violentos e foram atacados",
+      alternativa2:"As Crystal Gems atacaram William Dewey e os outros achando que eles fossem uma ameaça",
+      alternativa3:"Os colonizadores travaram uma guerra entre as Gems para tomar o domínio do território e fundar uma cidade",
+      dificuldade:"M"
+    },
+    {
+      pergunta:"Qual dessas músicas do desenho foi um dueto?",
+      resposta:"Ir por aí",
+      alternativa1:"Biscoito gatinho",
+      alternativa2:"Tower of mistakes",
+      alternativa3:"Mais forte que você",
+      dificuldade:"M"
+    },
+    {
+      dificuldade:"D",
+      pergunta:"O que os seguranças do prefeito Dewey fizeram quando Steven atirou uma camiseta no prefeito?",
+      resposta:"Eles saíram correndo",
+      alternativa1:"Eles empurraram o Prefeito para que o disparo não pegasse nele",
+      alternativa2:"Eles atiram no Steven",
+      alternativa3:"Eles empurraram o Prefeito para que o disparo não pegasse nele"
+    },
+
   ]; 
   console.log(armazen.length)
+  
