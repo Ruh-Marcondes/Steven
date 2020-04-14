@@ -1,4 +1,5 @@
-export const armazen = [
+//export const 
+armazen = [
     {
       pergunta: "Qual o nome do criador(a) de Steven Universo?",
       resposta: "Rebecca Sugar",
@@ -233,3 +234,4 @@ export const armazen = [
     },
     
   ]; 
+  console.log(armazen.length)

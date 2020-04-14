@@ -26,7 +26,8 @@
     },
     "android": {
       "package": "com.marcodesruahma.StevenQuizUniverso",
-      "versionCode": 1
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json"
     },
     "description": "Quiz sobre Steven Universo -> da Rebecca Sugar  -> @RuahmaMarcondes."
   }
