@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958575477047",
+    "firebase_url": "https://steven-quiz.firebaseio.com",
+    "project_id": "steven-quiz",
+    "storage_bucket": "steven-quiz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958575477047:android:4609a2f44a2b3b09915ab2",
+        "android_client_info": {
+          "package_name": "com.marcodesruahma.StevenQuizUniverso"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958575477047-5gc2pv5vbu7fu3mt1ap2mri1lgqham9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2GR7lG2T8XHct8UxpN-5atHtV7ROl_DA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958575477047-5gc2pv5vbu7fu3mt1ap2mri1lgqham9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

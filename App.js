@@ -2,13 +2,17 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 
+
 import HomeScreen from './src/Screens/HomeScreen'
 import QuestionsScreen from './src/Screens/QuestionsScreen'
 import SettingsScreen from './src/Screens/SettingsScreen'
 import AboutScreen from './src/Screens/AboutScreen'
 
 const stack = createStackNavigator();
-export default function App() {
+export default class App extends React.Component{
+  
+
+  render(){
   return (
       <NavigationContainer>
         <stack.Navigator initialRouteName="Home" headerMode = "none">
@@ -19,4 +23,5 @@ export default function App() {
         </stack.Navigator>
       </NavigationContainer>
   );
+};
 }

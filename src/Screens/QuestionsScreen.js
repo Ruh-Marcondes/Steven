@@ -7,6 +7,7 @@ import {
   Modal,
   Text,
   Alert,
+  SafeAreaView,
 } from "react-native";
 import { style, diamantes } from "./stylesModal";
 import { FontAwesome5, SimpleLineIcons, AntDesign } from "@expo/vector-icons";
@@ -22,10 +23,8 @@ import {
   dificuldade,
   newvalues,
   entrei,
-  limpar,
 } from "../Armazenamento/armazen";
 import { LinearGradient } from "expo-linear-gradient";
-import { set } from "react-native-reanimated";
 export default function QuestionsScreen({ navigation }) {
   //variaveis
   const [open, setOpen] = useState(true);
@@ -90,22 +89,22 @@ export default function QuestionsScreen({ navigation }) {
       }
     }
   }
-  function agaiin(){
-    
-    newvalues()  
-      do {
-        if (entrei == 1) {
-        setModalFinal(false)
+  function agaiin() {
+    newvalues();
+    do {
+      if (entrei == 1) {
+        setModalFinal(false);
         setVez(0);
-        setPergunta(per[0])
-        setAlt1(alternativa1[0])
-        setAlt2(alternativa2[0])
-        setAlt3(alternativa3[0])
-        setAlt4(alternativa4[0])
-        setPontos(0)
-        setOpen(true)
-        }
-      } while (entrei !== 1);
+        setPergunta(per[0]);
+        setAlt1(alternativa1[0]);
+        setAlt2(alternativa2[0]);
+        setAlt3(alternativa3[0]);
+        setAlt4(alternativa4[0]);
+        setPontos(0);
+        setOpen(true);
+        
+      }
+    } while (entrei !== 1);
   }
   return (
     <View style={style.container}>
@@ -172,7 +171,7 @@ export default function QuestionsScreen({ navigation }) {
                     }}
                   >
                     <Text style={styles.txtFinal}>Parabéns</Text>
-                    <Text style={[styles.txtFinal, { alignSelf: "center"}]}>
+                    <Text style={[styles.txtFinal, { alignSelf: "center" }]}>
                       você Fez: {pontos} pontos
                     </Text>
                   </View>
@@ -213,44 +212,48 @@ export default function QuestionsScreen({ navigation }) {
           <View style={styles.contmodal}>
             <View style={styles.hader} />
             <View>
-              <View style={styles.contPergunta}>
-                <Text style={styles.TXTperguntas}>{vez + 1}.</Text>
-                <Text
-                  style={[
-                    styles.TXTperguntas,
-                    { marginLeft: 10, marginRight: 10 },
-                  ]}
-                >{pergunta}</Text>
-              </View>
-              <View style={styles.contBtns}>
-                <RadioForm
-                  radio_props={radio_props}
-                  initial={null}
-                  onPress={(value) => {
-                    setselecionado(value);
-                  }}
-                  borderWidth={5}
-                  buttonSize={15}
-                  buttonOuterSize={30}
-                  animation={true}
-                  buttonColor={"#e74"}
-                  labelStyle={{
-                    fontSize: 20,
-                    fontWeight: "200",
-                    color: "#0d0d0d",
-                    marginRight:30
-                  }}
-                />
-              </View>
-              <View style={styles.icon}>
-                <TouchableOpacity onPress={goToNext}>
-                  <FontAwesome5
-                    name={"angle-double-right"}
-                    size={35}
-                    color={"#0d0d0d"}
-                  />
-                </TouchableOpacity>
-              </View>
+                <View style={styles.contPergunta}>
+                  <Text style={styles.TXTperguntas}>{vez + 1}.</Text>
+                  <Text
+                    style={[
+                      styles.TXTperguntas,
+                      { marginLeft: 10, marginRight: 10 },
+                    ]}
+                  >
+                    {pergunta}
+                  </Text>
+                </View>
+                <View style={styles.contBtns}>
+                  <View>
+                  <RadioForm
+                    radio_props={radio_props}
+                    initial={null}
+                    onPress={(value) => {
+                      setselecionado(value);
+                    }}
+                    borderWidth={5}
+                    buttonSize={15}
+                    buttonOuterSize={30}
+                    animation={true}
+                    buttonColor={"#e74"}
+                    labelStyle={{
+                      fontSize: 19,
+                      fontWeight: "200",
+                      marginRight: 30,
+                    }}
+                    />
+                    </View>
+                </View>
+                <View style={styles.icon}>
+                  <TouchableOpacity onPress={goToNext}>
+                    <FontAwesome5
+                      name={"angle-double-right"}
+                      size={35}
+                      color={"#0d0d0d"}
+                    />
+                  </TouchableOpacity>
+                </View>
+              
             </View>
           </View>
         </Modal>
@@ -271,24 +274,23 @@ var styles = StyleSheet.create({
   },
   contPergunta: {
     marginTop: 20,
-    marginBottom: 20,
     flexDirection: "row",
     marginLeft: 20,
-    marginRight: 30,
-    padding: 15,
+    marginRight: 20,
+    padding: 10,
     justifyContent: "space-between",
   },
   TXTperguntas: {
     color: "#080808",
     fontWeight: "600",
-    fontSize: 25,
+    fontSize: 20,
     justifyContent: "center",
   },
   contBtns: {
-    marginTop: 40,
+    marginTop: 20,
     marginRight: 10,
-    padding: 20,
-    marginLeft: 45,
+    padding: 10,
+    marginLeft: 20,
   },
   icon: {
     alignItems: "center",
