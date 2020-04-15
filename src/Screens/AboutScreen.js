@@ -136,7 +136,7 @@ export default function AboutScreen({ navigation }) {
           >
             <View style={styles.conticon}>
               <FontAwesome name="diamond" size={30} color={diamantes[3]} />
-          <Text style={styles.texticon}>Version:1.1.1</Text>
+          <Text style={styles.texticon}>Version:1.1.2</Text>
             </View>
           </TouchableOpacity>
         </View>

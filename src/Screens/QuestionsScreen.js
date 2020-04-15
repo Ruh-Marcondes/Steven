@@ -7,7 +7,6 @@ import {
   Modal,
   Text,
   Alert,
-  SafeAreaView,
 } from "react-native";
 import { style, diamantes } from "./stylesModal";
 import { FontAwesome5, SimpleLineIcons, AntDesign } from "@expo/vector-icons";
